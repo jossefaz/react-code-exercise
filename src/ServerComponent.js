@@ -5,10 +5,9 @@ const ServerComponent = () => {
   const [serverConf, setServerConf] = useState({});
 
   useEffect(() => {
-    const gameStartInternal = get_data(setServerConf);
-
+    const pid = get_data(setServerConf);
     return () => {
-      clearInterval(gameStartInternal);
+      clearInterval(pid);
     };
   });
 

@@ -17,8 +17,7 @@ const ServerConfig = () => ({
   }
 });
 
-export const get_data = (subscriberCb) =>
-  setInterval(
-    () => subscriberCb(ServerConfig()),
-    getRandomRangeNumber(5000, 500)
-  );
+export const get_data = (subscriberCb) => {
+  const pid = setInterval(() => subscriberCb(ServerConfig()), 5000);
+  return pid;
+};
