@@ -18,6 +18,9 @@ const ServerConfig = () => ({
 });
 
 export const get_data = (subscriberCb) => {
-  const pid = setInterval(() => subscriberCb(ServerConfig()), 5000);
+  const pid = setInterval(
+    () => subscriberCb(ServerConfig()),
+    getRandomRangeNumber(5000, 800)
+  );
   return pid;
 };
